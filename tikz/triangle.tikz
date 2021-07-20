@@ -1,0 +1,20 @@
+\documentclass[tikz]{standalone}
+\usepackage{tkz-euclide}
+
+\begin{document}
+\begin{tikzpicture}
+	\coordinate (O) at (0.4,-1.4);
+	\coordinate (A) at (-1.8,0.2);
+	\coordinate (B) at (3.4,2.1);
+	\draw [thick] (O)--(A)--(B)--cycle;
+
+	\tkzLabelSegment[below=2pt](O,A){$a$}
+	\tkzLabelSegment[right=2pt](O,B){$b$}
+	\tkzLabelSegment[above right=2pt](A,B){$c$}
+
+	\node [below] at (O) {$\gamma$};
+	\node [left] at (A) {$\beta$};
+	\node [right] at (B) {$\alpha$};
+	
+\end{tikzpicture}
+\end{document}
