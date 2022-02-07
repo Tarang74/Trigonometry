@@ -4,7 +4,7 @@
 
 ---
 
-This repository provides **notes** for **Trigonometry**.
+This repository provides notes on **Trigonometric Identities**.
 
 *The contents of the notes are described below.*
 
