@@ -1,20 +1,17 @@
+%!TEX program = xelatex
 \documentclass{article}
-\usepackage{template}
+\usepackage{LaTeX-Submodule/template}
 
-\usepackage{chngcntr} % Reset counter within sections
+% Additional packages & macros
 
-\counterwithin*{equation}{section}
-\counterwithin*{equation}{subsection}
-
-\pagestyle{fancy}
-\setlength\headheight{24pt}
-
-\lhead{\docTitle}
-\rhead{\leftmark}
-\cfoot{\thepage}
-
+% Header and footer
 \newcommand{\docTitle}{Trigonometry}
 
+\fancyhead[L]{\docTitle}
+\fancyhead[R]{\leftmark}
+\fancyfoot[C]{\thepage}
+
+% Copyright
 \usepackage[
     type={CC},
     modifier={by-nc-sa},
@@ -25,6 +22,7 @@
 \date{}
 
 \begin{document}
+%
 \begin{titlepage}
     \vspace*{\fill}
     \begin{center}
@@ -36,10 +34,10 @@
     \thispagestyle{empty}
 \end{titlepage}
 \newpage
-
+%
 \tableofcontents
 \newpage
-
+%
 \renewcommand*{\arraystretch}{1.25}
 \section{Definitions}
 \subsection{Trigonometric Functions}
