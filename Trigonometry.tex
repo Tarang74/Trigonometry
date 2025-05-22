@@ -23,6 +23,7 @@
     imagewidth={5em},
 ]{doclicense}
 
+\author{Tarang Janawalkar}
 \date{}
 
 \begin{document}
@@ -30,8 +31,8 @@
 \begin{titlepage}
     \vspace*{\fill}
     \begin{center}
-        \LARGE
-        \textbf{\docTitle}
+        \LARGE\textbf{\docTitle}\\[0.2in]
+        \normalsize\textsc{Tarang Janawalkar}
     \end{center}
     \vspace*{\fill}
     \doclicenseThis
@@ -45,9 +46,11 @@
 \renewcommand*{\arraystretch}{1.25}
 \section{Definitions}
 \subsection{Trigonometric Functions}
+The trigonometric definitions below are derived from the following right
+triangle construction.
 \begin{figure}[H]
     \centering
-    \includegraphics[height = 4cm, keepaspectratio = true]{figures/right triangle.pdf}
+    \includegraphics[height = 4cm, keepaspectratio = true]{figures/right-triangle.pdf}
 \end{figure}
 \begin{align*}
     \sin{\left( \theta \right)} & = \frac{\text{opposite}}{\text{hypotenuse}} & \csc{\left( \theta \right)} & = \frac{\text{hypotenuse}}{\text{opposite}} \\
@@ -188,4 +191,117 @@ Dividing by either the sine or cosine function gives:
 \begin{equation*}
     \frac{b+c}{a}=\frac{\cos{\left( \frac{\beta-\gamma}{2} \right)}}{\sin{\left( \frac{\alpha}{2} \right)}}
 \end{equation*}
+\section{The Unit Circle}
+The unit circle \(C\) is defined as the set of all points \(\left( x,\: y \right)\)
+which satisfy the equation
+\begin{equation*}
+    x^2 + y^2 = 1,
+\end{equation*}
+or, mathematically,
+\begin{equation*}
+    C = \left\{ \left( x,\: y \right) \,\vert\, x^2 + y^2 = 1 \right\}.
+\end{equation*}
+A graph of this function is shown below.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{figures/unit-circle.pdf}
+\end{figure}
+A point that lies on this circle can be described by the angle it forms
+with the positive \(x\)-axis. This point has the components:
+\begin{equation*}
+    \left( x,\: y \right) = \left( \cos{\left( \theta \right)},\: \sin{\left( \theta \right)} \right).
+\end{equation*}
+\subsection{Special Triangles}
+The following right triangle constructions provide coordinates of
+points that form an angle of \(\pi/6\), \(\pi/4\), or \(\pi/3\) from the
+positive \(x\)-axis.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{figures/unit-circle-30.pdf}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{figures/unit-circle-45.pdf}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{figures/unit-circle-60.pdf}
+\end{figure}
+This is summarised in the table below.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c c c}
+        \toprule
+        \textbf{Angle from Positive \(x\)-axis} & \textbf{Horizontal Component}                  & \textbf{Vertical Component}                    \\
+        \midrule
+        \(\displaystyle\frac{\pi}{6} = 30^\circ\) & \(\displaystyle\frac{\sqrt{3}}{2} \approx \num{0.866025}\) & \(\displaystyle\frac{1}{2} = 0.5\)                         \\[2ex]
+        \(\displaystyle\frac{\pi}{4} = 45^\circ\) & \(\displaystyle\frac{\sqrt{2}}{2} \approx \num{0.707107}\) & \(\displaystyle\frac{\sqrt{2}}{2} \approx \num{0.707107}\) \\[2ex]
+        \(\displaystyle\frac{\pi}{6} = 30^\circ\) & \(\displaystyle\frac{1}{2} = 0.5\)                         & \(\displaystyle\frac{\sqrt{3}}{2} \approx \num{0.866025}\) \\[2ex]
+        \bottomrule
+    \end{tabular}
+    % \caption{} % \label{}
+\end{table}
+\subsection{2-Argument Arctangent}
+Consider a point \(\left( x,\: y \right)\) that lies on the Cartesian
+plane. The angle measure from the positive \(x\)-axis and the ray from
+the origin to the point \(\left( x,\: y \right)\) is defined by the
+2-argument arctangent function:
+\begin{equation*}
+    \operatorname{atan2}\left( y,\: x \right) =
+    \begin{cases}
+        \arctan{\left( \frac{y}{x} \right)}       & \text{if \(x > 0\)},                       \\
+        \arctan{\left( \frac{y}{x} \right)} + \pi & \text{if \(x < 0\) and \(y \geqslant 0\)}, \\
+        \arctan{\left( \frac{y}{x} \right)} - \pi & \text{if \(x < 0\) and \(y < 0\)},         \\
+        +\frac{\pi}{2}                            & \text{if \(x = 0\) and \(y > 0\)},         \\
+        -\frac{\pi}{2}                            & \text{if \(x = 0\) and \(y < 0\)},         \\
+        \text{undefined}                          & \text{if \(x = 0\) and \(y = 0\)}.
+    \end{cases}
+\end{equation*}
+This definition allows an angle measure to be obtained in any quadrant
+of the Cartesian plane, on the interval \(\linterval{-\pi}{\pi}\).
+When \(x\) and \(y\) describe the real and imaginary parts of a complex
+number \(z = x + yi\), the 2-argument arctangent is precisely the
+principal argument of \(z\):
+\begin{equation*}
+    \operatorname{Arg}\left( z \right) = \operatorname{atan2}\left( y,\: x \right),
+\end{equation*}
+defined on the same interval \(\linterval{-\pi}{\pi}\).
+Note that the set of all arguments of a complex number is defined by the
+general argument:
+\begin{equation*}
+    \arg{\left( z \right)} = \left\{ \operatorname{Arg}\left( z \right) + 2\pi n \,\vert\, n \in \Z \right\}.
+\end{equation*}
+These angles can be geometrically determined by considering the quadrant
+in which the point lies.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{figures/Arg-q1.pdf}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{figures/Arg-q2.pdf}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{figures/Arg-q3.pdf}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{figures/Arg-q4.pdf}
+\end{figure}
+This is summarised below.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c c c c}
+        \toprule
+        \textbf{Quadrant} & \textbf{Sign} \(x\) & \textbf{Sign} \(y\) & \textbf{Angle Measure} \(\theta\)                      \\
+        \midrule
+        First             & \({}+{}\)           & \({}+{}\)           & \(\arctan{\left( \frac{y}{x} \right)}\)                \\
+        Second            & \({}-{}\)           & \({}+{}\)           & \(\pi - \arctan{\left( \frac{y}{\abs*{x}} \right)}\)   \\
+        Third             & \({}-{}\)           & \({}-{}\)           & \(-\pi + \arctan{\left( \frac{\abs*{y}}{x} \right)}\)  \\
+        Fourth            & \({}+{}\)           & \({}-{}\)           & \(-\arctan{\left( \frac{\abs*{y}}{\abs*{x}} \right)}\) \\
+        \bottomrule
+    \end{tabular}
+    % \caption{} % \label{}
+\end{table}
 \end{document}

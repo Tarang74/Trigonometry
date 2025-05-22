@@ -1,0 +1,39 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        scale only axis=true,
+        xmin=-0.25,xmax=1.25,
+        ymin=-0.25,ymax=1.25,
+        xticklabel=\empty,
+        yticklabel=\empty,
+        xtick={-1,0,1},
+        ytick={-1,0,1},
+        axis lines=middle,
+        xlabel=$x$,ylabel=$y$,
+        height=8cm,
+        width=8cm
+        ]
+        \draw[thick] (axis cs:0,0) circle (1);
+        \draw[->] (axis cs:0.1,0) arc (0:60:0.1) node[right=0.2cm] {\footnotesize$\frac{\pi}{3}$};
+        \draw (axis cs:0.5,0.1) -- (axis cs:0.4,0.1) -- (axis cs:0.4,0);
+
+        \coordinate (O) at (axis cs:0,0);
+        \coordinate (A) at (axis cs:1,0);
+        \coordinate (B) at (axis cs:0.5,0.866025);
+        \coordinate (C) at (axis cs:0.5,0);
+
+        \draw[rounded corners=0.1mm, thick, blue!20] (C)--(A)--(B)--cycle;
+        \draw[rounded corners=0.1mm, thick, blue] (O)--(C)--(B)--cycle;
+
+        \node[below] at (axis cs:0.25,0) {\footnotesize$\frac{1}{2}$};
+        \node[right] at (axis cs:0.5,0.433013) {\footnotesize$\frac{\sqrt{3}}{2}$};
+        \path (O) -- (B) node[midway,sloped,above] {\footnotesize$1$};
+  \end{axis}
+\end{tikzpicture}
+\end{document}

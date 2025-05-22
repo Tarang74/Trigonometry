@@ -1,5 +1,5 @@
-\documentclass[tikz]{standalone}
-\usepackage{tkz-euclide}
+\documentclass{standalone}
+\usepackage{tikz}
 
 \begin{document}
 \begin{tikzpicture}
@@ -8,13 +8,12 @@
 	\coordinate (B) at (3.4,2.1);
 	\draw [thick] (O)--(A)--(B)--cycle;
 
-	\tkzLabelSegment[below=2pt](O,A){$a$}
-	\tkzLabelSegment[right=2pt](O,B){$b$}
-	\tkzLabelSegment[above right=2pt](A,B){$c$}
+	\path (O) -- (A) node[midway,sloped,below=0.1cm] {\(a\)};
+	\path (O) -- (B) node[midway,sloped,below=0.1cm] {\(b\)};
+	\path (A) -- (B) node[midway,sloped,above=0.1cm] {\(c\)};
 
-	\node [below] at (O) {$\gamma$};
-	\node [left] at (A) {$\beta$};
-	\node [right] at (B) {$\alpha$};
-	
+	\node [below=0.2cm] at (O) {\(\gamma\)};
+	\node [left=0.2cm] at (A) {\(\beta\)};
+	\node [above=0.15cm,right=0.2cm] at (B) {\(\alpha\)};
 \end{tikzpicture}
 \end{document}

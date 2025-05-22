@@ -1,0 +1,35 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        scale only axis=true,
+        xmin=-1.5,xmax=1.5,
+        ymin=-1.5,ymax=1.5,
+        xticklabels={\(\),\(\),\footnotesize\(\cos{\left( \theta \right)}\),\(\)},
+        yticklabels={\(\),\(\),\footnotesize\(\sin{\left( \theta \right)}\),\(\)},
+        xtick={-1,0,0.5,1},
+        ytick={-1,0,0.866025,1},
+        axis lines=middle,
+        height=8cm,
+        width=8cm
+        ]
+        \draw[thick,black] (axis cs:0,0) circle (1);
+        \coordinate (O) at (axis cs:0, 0);
+        \coordinate (A) at (axis cs:0.5, 0.866025);
+
+        \draw[thick, blue] (O) -- (A);
+        \draw[->] (axis cs:0.2, 0) arc (0:60:0.2);
+        \node[label={[label distance=0.4cm]30:\footnotesize\(\theta\)}] at (axis cs:0,0) {};
+
+        \filldraw (A) circle (0.4mm);
+        \draw[dashed] (A) -- (A |- O);
+        \draw[dashed] (A) -- (A -| O);
+        \node[label={[label distance=2.5cm]60:\footnotesize\(\left( x,\: y \right)\)}] at (axis cs:0,0) {};
+  \end{axis}
+\end{tikzpicture}
+\end{document}

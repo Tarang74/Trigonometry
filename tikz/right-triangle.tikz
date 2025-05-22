@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}
+	\coordinate (O) at (0,0);
+	\coordinate (A) at (5,0);
+	\coordinate (B) at (5,3);
+	\draw [thick] (O)--(A)--(B)--cycle;
+
+	\path (O) -- (A) node[sloped,midway,below=0.1cm] {adjacent};
+	\path (O) -- (B) node[sloped,midway,above=0.1cm] {hypotenuse};
+	\path (B) -- (A) node[sloped,midway,above=0.1cm] {opposite};
+
+    \draw[->] (0.75,0) arc (0:30.9638:0.75);
+    \node[label={[label distance=0.6cm]4:\small\(\theta\)}] at (O) {};
+    \draw (5,0.25) -- (4.75,0.25) -- (4.75,0);
+\end{tikzpicture}
+\end{document}
