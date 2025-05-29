@@ -4,7 +4,8 @@
 
 ---
 
-This repository provides notes on **Trigonometric Identities**.
+This repository summarises geometric and algebraic identities
+related to the study of **Trigonometry**.
 
 *The contents of the notes are described below.*
 
@@ -15,6 +16,7 @@ This repository provides notes on **Trigonometric Identities**.
 1. Definitions
 2. Trigonometric Identities
 3. Geometric Identities
+4. The Unit Circle
 
 ---
 
